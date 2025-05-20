@@ -1,3 +1,5 @@
+#program will ask for user's name and say hi
+
 # step 1 ask user's name
 print("What is your name?")
 # step 2 user inputs name and save as variable
