@@ -6,3 +6,10 @@ print("What is your name?")
 user_name = input()
 # step 3 greet user
 print("Hi, " + user_name + "!")
+
+# ask birth year
+print("What year were you born?")
+# user inputs birth name and saves as variable
+birth_year = input()
+# insults user
+print("Damn alright unc")
