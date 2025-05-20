@@ -1,0 +1,10 @@
+# my_age = 19
+# print("my age is " + str(my_age))
+# print("my age is", my_age)
+
+# step 1 ask user's name
+print("What is your name?")
+# step 2 user inputs name and save as variable
+user_name = input()
+# step 3 greet user
+print("Hi, " + user_name + "!")
