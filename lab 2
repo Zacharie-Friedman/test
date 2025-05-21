@@ -5,11 +5,13 @@ print("What is your name?")
 # step 2 user inputs name and save as variable
 user_name = input()
 # step 3 greet user
-print("Hi, " + user_name + "!")
+print("Hi, " + user_name + ". Nice to meet you.")
 
 # ask birth year
 print("What year were you born?")
 # user inputs birth name and saves as variable
 birth_year = input()
-# insults user
-print("Damn alright unc")
+# calculates user's age
+print("You are at least " + str(2024-int(birth_year)) + " years old.")
+
+print("Goodbye.")
