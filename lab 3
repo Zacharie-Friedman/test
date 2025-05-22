@@ -1,0 +1,37 @@
+import random
+
+user_choice = input("Rock, Paper, or Scissors?    ")
+cpu_choice = random.choice(["Rock", "Paper", "Scissors"])
+
+if user_choice == "Rock":
+    if cpu_choice == "Rock":
+        print("I chose Rock")
+        print("It's a draw!")
+    if cpu_choice == "Scissors":
+        print("I chose Scissors")
+        print("You win!")
+    if cpu_choice == "Paper":
+        print("I chose Paper")
+        print("You lose!")
+elif user_choice == "Scissors":
+    if cpu_choice == "Rock":
+        print("I chose Rock")
+        print("You lose!")
+    if cpu_choice == "Scissors":
+        print("I chose Scissors")
+        print("It's a draw!")
+    if cpu_choice == "Paper":
+        print("I chose Paper")
+        print("You win!")
+elif user_choice == "Paper":
+    if cpu_choice == "Rock":
+        print("I chose Rock")
+        print("You win!")
+    if cpu_choice == "Scissors":
+        print("I chose Scissors")
+        print("You lose!")
+    if cpu_choice == "Paper":
+        print("I chose Paper")
+        print("It's a draw!")
+else:
+    print("Please restart and enter a valid input.")
