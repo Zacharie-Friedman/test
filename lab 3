@@ -1,3 +1,5 @@
+#user and cpu will both choose Rock, Paper, or Scissors. They will then be very inefficiently compared to determine who wins or if it is a tie, and if the user did not enter a valid choice, the game will not run.
+
 import random
 
 user_choice = input("Rock, Paper, or Scissors?    ")
