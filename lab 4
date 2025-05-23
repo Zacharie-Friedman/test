@@ -9,7 +9,7 @@
 # - find the most common/frequently used word hell nah i aint doin ts
 
 # user inputs sentence
-user_sentence = "I like to go out to eat sushi with my friends, except if it's raining, then I would rather go to the library."
+user_sentence = input("Enter a sentence to be analyzed.")
 
 # converts everything to lowercase
 user_sentence = user_sentence.lower()
