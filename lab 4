@@ -1,0 +1,80 @@
+# let the user type in a sentence or a paragraph and analyze the text
+# - count the number of words DONE
+# - make a word frequency counter DONE
+# - count the number of characters DONE
+# - find the average word length DONE
+# - find the longest word DONE
+# - find the shortest word DONE
+# - alphabetize the words DONE
+# - find the most common/frequently used word hell nah i aint doin ts
+
+# user inputs sentence
+user_sentence = "I like to go out to eat sushi with my friends, except if it's raining, then I would rather go to the library."
+
+# converts everything to lowercase
+user_sentence = user_sentence.lower()
+
+# determine and state number of characters
+char_count = 0
+for letter in user_sentence:
+    char_count += 1
+print(f"There are {char_count} characters in your sentence")
+
+# determine and state number of spaces
+space_count = 0
+for char in user_sentence:
+    if char == (" "):
+        space_count += 1
+print(f"There are {space_count} spaces in your sentence.")
+
+# determine and state number of words
+word_count = space_count + 1
+print(f"There are {word_count} words in your sentence.")
+
+# determine and state word frequency
+word_frequency = char_count / word_count
+print(f"On average, there is a word every {word_frequency} characters.")
+
+# remove all punctuation
+new_sentence = user_sentence.replace(".", "")
+new_sentence = new_sentence.replace(",", "")
+new_sentence = new_sentence.replace("'", "")
+new_sentence = new_sentence.replace('"', "")
+new_sentence = new_sentence.replace(":", "")
+new_sentence = new_sentence.replace(";", "")
+new_sentence = new_sentence.replace("/", "")
+new_sentence = new_sentence.replace("?", "")
+new_sentence = new_sentence.replace("!", "")
+new_sentence = new_sentence.replace("(", "")
+new_sentence = new_sentence.replace(")", "")
+
+# create word list
+word_list = new_sentence.split(" ")
+
+# determine and number of letters
+letter_count = 0
+for letter in new_sentence:
+    letter_count += 1
+print(f"There are {letter_count} letters in your sentence.")
+
+# determine and state average word length
+word_length = letter_count / word_count
+print(f"The average word length is {word_length} letters.")
+
+# determine and state the shortest word
+longest_word = word_list[0]
+for word in word_list:
+    if len(word) > len(longest_word):
+        longest_word = word
+print(f"The longest word is {longest_word}.")
+
+# determine and state the shortest word
+shortest_word = word_list[0]
+for word in word_list:
+    if len(word) < len(shortest_word):
+        shortest_word = word
+print(f"The shortest word is {shortest_word}.")
+
+# alphabetizes and lists words
+word_list.sort()
+print(word_list)
