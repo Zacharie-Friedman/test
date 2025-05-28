@@ -1,0 +1,64 @@
+# SDM: make an adventure game with choices for the user to input which leads to different outcomes
+# user will be given specific choices and if none are chosen the choices will be repeated
+# after a series of choises the user will be told that they won or lost
+
+running = True
+while running:
+    print("MAIN MENU")
+    answer = input("Are you ready to play? (type 'yes' or 'no')  ")
+    if (answer == "yes"):
+        print("Okay, let's begin...")
+        playing = True
+        while playing:
+            print("Level 1")
+            choises1 = ["light a torch", "do nothing"]
+            print("You are in a dark room. What do you do? Choose '1' or '2'")
+            print(choises1)
+            answer = input()
+            if (answer == "1"):
+                while playing:
+                    print("You light a torch and see a treasure chest.")
+                    print("The treasure chest seems to be locked. What do you do? Choose '1' '2' or '3'")
+                    choises2 = ["look for a key", "try to break it open with your fists", "give up and exit the room"]
+                    print(choises2)
+                    answer = input()
+                    if answer == "1":
+                        while playing:
+                            print("Where will you look for the key? Choose '1' '2' or '3'")
+                            choises3 = ["under the chest", "in the corner of the room", "behind you"]
+                            answer = input()
+                            if (answer == "1"):
+                                print("As you let down your guard to look for the key, a monster sneaks up on you from behind and eats you alive.")
+                                print("You lose.")
+                                print()
+                                playing = False
+                            elif (answer == "2"):
+                                print("As you let down your guard to look for the key, a monster sneaks up on you from behind and eats you alive.")
+                                print("You lose.")
+                                print()
+                                playing = False
+                            elif (answer == "3"):
+                                print("You turn around just in time to see a monster's wide jaws as it eats you alive.")
+                                print("You lose.")
+                                print()
+                                playing = False
+                    elif answer == "2":
+                        print("You punch the chest repeatedly until every bone in your hands and wrists is broken. You leave the room and head to the hospital.")
+                        print("You left the room alive.")
+                        print("You win!")
+                        print()
+                        playing = False
+                    elif answer == "3":
+                        print("You leave the room and go home.")
+                        print("You left the room alive.")
+                        print("You win!")
+                        print()
+                        playing = False
+            elif (answer == "2"):
+                print("Due to the low light level, you are unable to see the approaching monster that will soon eat you.")
+                print("You lose.")
+                print()
+                playing = False
+    elif (answer == "no"):
+        print("Goodbye")
+        running = False
