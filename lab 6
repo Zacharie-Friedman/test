@@ -1,0 +1,57 @@
+# program will take in user input in the format of HH:MM and can be any valid 12 hour clock time
+# for example, 01:59 would be 01:59 in either the morning or afternoon
+# after taking in a time, 1 more user input will be a positive integer which ticks the clock forward that many minutes and display the new time
+# for bonus points: handle seconds also
+
+ready = False
+
+while ready == False:
+    while True:
+        time = input("Enter your time in the format HH:MM  ")
+        b = 0
+        hours = time[0:2]
+        minutes = time[3:5]
+        if len(time) != 5:
+            break
+        if time[2] != ":":
+            break
+        for char in hours:
+            if char == "-":
+                b = 1
+            if not char.isdigit():
+                b = 1
+        if b == 1:
+            break
+        if int(hours) > 12:
+            break
+        if int(hours) == 0:
+            break
+        for char in minutes:
+            if char == "-":
+                b = 1
+            if not char.isdigit():
+                b = 1
+        if b == 1:
+            break
+        if int(minutes) > 59:
+            break
+        ready = True
+        break
+print(hours + ":" + minutes)
+ready = False
+
+while ready == False:
+    add = input("How many minutes would you like to add?   ")
+    for char in add:
+        if char.isdigit():
+            ready = True
+
+minutes = int(minutes)
+hours = int(hours)
+minutes = minutes + int(add)
+while minutes > 59:
+    hours += 1
+    minutes += -60
+while hours > 12:
+    hours += -12
+print(str(hours) + ":" + str(minutes))
