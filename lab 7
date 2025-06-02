@@ -1,0 +1,16 @@
+money = 100.00
+tank_size = 15.
+mpg = 25.
+price_per_gal = 3.25
+
+def calc_full_tank_dist(tank_size, mpg):
+    return tank_size * mpg
+
+full_tank_dist = calc_full_tank_dist(tank_size, mpg)
+print(f"On a single tank of gas, I can travel {full_tank_dist} miles.")
+
+def calc_buyable_gallons(money, price_per_gal):
+    return money / price_per_gal
+
+buyable_gallons = calc_buyable_gallons(money, price_per_gal)
+print(f"I can afford {buyable_gallons} gallons of gas.")
