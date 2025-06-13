@@ -1,0 +1,54 @@
+from abc import ABC, abstractmethod
+
+class Character(ABC):
+    def __init__(self, name, hp, attack_power):
+        self.name = name
+        self.hp = hp
+        self.alive = True
+        self.attack_power = True
+
+    def get_alive(self):
+        return self.alive
+    
+    def attack(self, target):
+        print(f"{self.name} attacks {target.name} for {self.attack_power} damage.")
+        target.take_damage(self.attack_power)
+
+    def take_damage(self, amount):
+        self.hp = self.hp - amount
+        if(self.hp < 0):
+            self.alive = False
+
+    @abstractmethod
+    def speak(self):
+        pass
+
+class PlayerCharacter(Character):
+    def speak(self):
+        return "Hello there!"
+        
+class NPC(Character):
+    def __init__(self, name, hp, attack_power, mood):
+        super().__init__(name, hp, attack_power)
+        self.mood = mood
+
+    def speak(self):
+        if (self.mood == "friendly"):
+            return "Why hello there!"
+        elif (self.mood == "unfriendly"):
+            return "<angry growl>"
+        else:
+            return "Who goes there?"
+
+bob = Character("Bob", 4, 2)
+print(f"{bob.name} says '{bob.speak()}'")
+sam = NPC("Sam", 5, 1, "friendly")
+print(f"{sam.name} says '{sam.speak()}'")
+
+while bob.get_alive() and sam.get_alive():
+    bob.attack(sam)
+    print(f"{bob.name} has {bob.hp} HP left.")
+    if(sam.get_alive()):
+        sam.attack(bob)
+        print(f"{sam.name} has {sam.hp} HP left.")
+print("The battle has ended.")
