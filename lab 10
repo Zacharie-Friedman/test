@@ -1,0 +1,30 @@
+def check():
+   valid = True
+   if len(ssn) != 11:
+       valid = False
+   if ssn[3] != "-":
+       valid = False
+   if ssn[6] != "-":
+       valid = False
+   seg1 = ssn[0:3]
+   if seg1.isnumeric():
+       x = 1
+   else:
+       valid = False
+   seg2 = ssn[4:6]
+   if seg2.isnumeric():
+       x = 1
+   else:
+       valid = False
+   seg3 = ssn[7:11]
+   if seg3.isnumeric():
+       x = 1
+   else:
+       valid = False
+   if valid == True:
+       print("VALID")
+   elif valid == False:
+       print("NOT VALID")
+
+ssn = input("Enter SSN ")
+check()
